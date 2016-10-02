@@ -1,7 +1,9 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
+	"github.com/go-sql-driver/mysql"
 	//	"html/template"
 	//	"log"
 	"math/rand"
@@ -78,6 +80,9 @@ func main() {
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}*/
+	//user:pass@tcp/hello
+	db, err := sql.open("mysql", "")
+
 	start()
 	players := []player{player{NoRole, "John"}, player{NoRole, "James"}, player{NoRole, "Jimmy"}}
 	for j := 0; j < 10; j++ {
